@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import '../assets/css/animal.css';
 
 export default function Details({animals}){
     const [currentAnimal, setCurrentAnimal] = useState();
@@ -23,46 +23,15 @@ export default function Details({animals}){
         }
     };
     return(
-        <div>
-            <div className="leftDiv">
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <td>Animal Name</td>
-                            <td>Action</td>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {animals.map((animal, index)=>(
-                            <tr key={index}>
-                                <td>{animal.name}</td>
-                                <td><botton onClick={() => handleAnimalClick(animal)}>
-                                    Select
-                                     </botton>
-                                     </td>
-                            </tr>
-                        ))}
-                    </tbody>
-
-                </table>
+        <div className="game-container">
+            <h1 className="title">Animal Matching Game</h1>
+          <div className="leftDiv">
+            <div className="info">
+                <h3>result</h3>
+                <p className={result.toLoweCaes()}>{result}</p>
+                
             </div>
-            <div >
-                {currentAnimal && (
-                    <div>
-                        <h2>Select the Animal</h2>
-                        <p>
-                            {currentAnimal.name}
-                        </p>
-                        <img src={currentAnimal.image} alt={currentAnimal.name} width ="100" height="100"/>
-                        <h3>{result}</h3>
-
-                    </div>
-                )}
-                <button onClick={generateRandomAnimal} className="rest-button">
-                    Play again </button>
-
-            </div>
+          </div>
         </div>
     );
 }

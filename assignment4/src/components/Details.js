@@ -37,11 +37,29 @@ export default function Details({animals}){
                     
                     </thead>    
                     <tbody>
+                        <tr>
+                            <td colspan ="2" className="result-cell">
+                                <p className={result.toLocaleLowerCase()}>{result || "Pending"}</p>
+
+                            </td>
+                            <td className="animal-name-cell">
+                                <p>{currentAnimal?.name || "unknown"}</p>
+
+                            </td>
+                            <td colspan="4" className="animal-grid-cell">
+                                <div className="animal-grid">
+                                    {animals.map((animal, index) => (
+                                        <div key={index} className="animal-card" onClick={()=> handleAnimalClick(animal)}>
+                                            <img src={animal.image} alt={animal.name}/>
+                                            </div> 
+                                    ))}
+                                </div>
+                            </td>
+                        </tr>
                         
                     </tbody>
                 </table>
-
-
+                <button className="reset-button" onClick={generateRandomAnimal}>Play Again</button>
             
         </div>
         

@@ -23,21 +23,34 @@ export default function Details({animals}){
         }
     };
     return(
-        <div className="game-container">
-            <h1 className="title">Animal Matching Game</h1>
-          <div className="leftDiv">
-            <div className="info">
-                <h3>result</h3>
-                <p className={result.toLoweCaes()}>{result}</p>
+        <div >
+            <h1 >Animal Matching Game</h1>
+          <div >
+            <div >
+                <div >
+                <h3>Result</h3>
+                <p className={result}>{result}</p>
                 
             </div>
-            <div className="animal">
+            <div >
                 <h3>Animal Name</h3>
                 <p>{currentAnimal?.name}</p>
             </div>
           </div>
 
-          
+          <div >
+            <h3>Select the animal</h3>
+            <div >
+                {animals.map((animal, index) => 
+                <div key={index} className="animal-card" onClick={()=>handleAnimalClick(animal)}>
+            <img src={animal.image} alt={animal.name}/>
+            </div>
+            )}
+            </div>
+          </div>
+            </div>
+            
         </div>
+        
     );
 }

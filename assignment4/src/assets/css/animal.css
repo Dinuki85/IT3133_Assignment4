@@ -1,93 +1,90 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-   
-    background-color: #f5f5f5
-}
-
 .game-container{
-   
-    margin: 20px auto;
-    padding:20px;
-    background-color: #fff;
-    border: 20px solid #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-}
-
-.title {
+    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
-    margin-bottom:20px;
+    margin:20px;
+}
+
+.title{
+    font-size:2rem;
     color:#333;
+    margin-bottom:20px;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-
+.game-table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 20px auto;
 }
 
-.info-section {
-    flex:1;
-    border: 2px solid #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #fdfdfd;
+.game-table th,
+.game-table td{
+    border:1px solid #add;
+    padding:15px;
+    text-align:center;
 }
 
-.result .win{
+.game-table th{
+    background-color:#f4f4f4;
+    color:#555;
+    font-size:1.2rem;
+}
+
+.result-cell p{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.result-cell .win{
     color:green;
 }
 
-.result.lose{
+.result-cell .lose{
     color:red;
 }
 
-.game-section{
-    flex: 2;
-    text-align: center;
+.animal-name-cell{
+    font-size:1.5rem;
+    color:#ff8c00;
+    font-weight:center;
 }
 
 .animal-grid{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 10px;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.animal-card {
-    cursor:pointer;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
+.animal-card{
+    cursor: pointer;
+    border:2px solid transparent;
+    transition: transform 0.3 ease,border 0.3 ease;
 }
 
 .animal-card img{
-    width: 100%;
-    height:auto;
-    display:block;
+    width:80px;
+    height:80px;
+    object-fit:cover;
 }
 
-.animal-card:hover {
-    transform:scale(1.05);
-    border-color:orange;
+.animal-card:hover{
+    transform:scale(1.1);
+    border:2px solid #ffa500;
 }
 
-.reset-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color:#fff;
-    background-color:#0073e6;
-    border: none;
+
+.reset-button{
+    margin-top: 20px;
+    padding :10px 20px;
+    background-color:#ffa500;
+    color:white;
+    border:non;
     border-radius: 5px;
     cursor:pointer;
+    font-size:1rem;
+    transition:background-color 0.3s ease;
 
 }
 
-reset-button:hover{
-    background-color: #005bb5
+.reset-button:hover{
+    background-color:#e59400;
 }

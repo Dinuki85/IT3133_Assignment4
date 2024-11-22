@@ -31,7 +31,13 @@ export default function Details({animals}){
                 <p className={result.toLoweCaes()}>{result}</p>
                 
             </div>
+            <div className="animal">
+                <h3>Animal Name</h3>
+                <p>{currentAnimal?.name}</p>
+            </div>
           </div>
+
+          
         </div>
     );
 }

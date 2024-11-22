@@ -47,9 +47,22 @@ export default function Details({animals}){
 
                 </table>
             </div>
-            <div>
+            <div >
+                {currentAnimal && (
+                    <div>
+                        <h2>Select the Animal</h2>
+                        <p>
+                            {currentAnimal.name}
+                        </p>
+                        <img src={currentAnimal.image} alt={currentAnimal.name} width ="100" height="100"/>
+                        <h3>{result}</h3>
+
+                    </div>
+                )}
+                <button onClick={generateRandomAnimal} className="rest-button">
+                    Play again </button>
 
             </div>
         </div>
-    )
+    );
 }

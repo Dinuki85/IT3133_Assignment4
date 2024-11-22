@@ -24,32 +24,24 @@ export default function Details({animals}){
     };
     return(
         <div className="game-container">
-            <h1 className="title">Animal Matching Game</h1>
-          <div className="content">
-            <div className="info-section">
-                <div className="result">
-                <h3>Result</h3>
-                <p className={result.toLocaleLowerCase()}>{result}</p>
-                
+            <div>
+            <h1 className='title'>Animal Matching Game</h1>
             </div>
-            <div className="animal-name">
-                <h3>Animal Name</h3>
-                <p>{currentAnimal?.name}</p>
-            </div>
-          </div>
+            <table className="game-table">
+                <thead>
+                    <tr>
+                        <th colspan='2'>Result</th>
+                        <th>Animal Name</th>
+                        <th colspan='4'>Select the Animal</th>
+                    </tr>
+                    
+                    </thead>    
+                    <tbody>
+                        
+                    </tbody>
+                </table>
 
-          <div className="game-section">
-            <h3>Select the animal</h3>
-            <div className="animal-grid">
-                {animals.map((animal, index) => (
-                <div key={index} className="animal-card" onClick={()=>handleAnimalClick(animal)}>
-            <img src={animal.image} alt={animal.name}/>
-            </div>
-            ))}
-            </div>
-          </div>
-            </div>
-            <button className="reset-button" onClick={generateRandomAnimal}>Play again</button>
+
             
         </div>
         

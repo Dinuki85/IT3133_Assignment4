@@ -17,38 +17,39 @@ export default function Details({animals}){
 
     const handleAnimalClick = (animal) => {
         if(animal.name === currentAnimal.name){
-            setResult("You win");
+            setResult("win");
         }else{
-            setResult("Try again");
+            setResult("lose");
         }
     };
     return(
-        <div >
-            <h1 >Animal Matching Game</h1>
-          <div >
-            <div >
-                <div >
+        <div className="game-container">
+            <h1 className="title">Animal Matching Game</h1>
+          <div className="content">
+            <div className="info-section">
+                <div className="result">
                 <h3>Result</h3>
-                <p className={result}>{result}</p>
+                <p className={result.toLocaleLowerCase()}>{result}</p>
                 
             </div>
-            <div >
+            <div className="animal-name">
                 <h3>Animal Name</h3>
                 <p>{currentAnimal?.name}</p>
             </div>
           </div>
 
-          <div >
+          <div className="game-section">
             <h3>Select the animal</h3>
-            <div >
-                {animals.map((animal, index) => 
+            <div className="animal-grid">
+                {animals.map((animal, index) => (
                 <div key={index} className="animal-card" onClick={()=>handleAnimalClick(animal)}>
             <img src={animal.image} alt={animal.name}/>
             </div>
-            )}
+            ))}
             </div>
           </div>
             </div>
+            <button
             
         </div>
         

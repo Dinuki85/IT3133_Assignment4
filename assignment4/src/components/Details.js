@@ -15,7 +15,13 @@ export default function Details({animals}){
         setResult("");
     };
 
-    
+    const handleAnimalClick = (animal) => {
+        if(animal.name === currentAnimal.name){
+            setResult("You win");
+        }else{
+            setResult("Try again");
+        }
+    };
     return(
         <div>
             <div>

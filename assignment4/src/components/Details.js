@@ -24,7 +24,7 @@ export default function Details({animals}){
     };
     return(
         <div>
-            <div>
+            <div className="leftDiv">
                 <table border="1">
                     <thead>
                         <tr>
@@ -46,6 +46,9 @@ export default function Details({animals}){
                     </tbody>
 
                 </table>
+            </div>
+            <div>
+
             </div>
         </div>
     )

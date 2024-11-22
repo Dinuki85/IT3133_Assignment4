@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-export default function Details(props){
+
+export default function Details({animals}){
+    const [currentAnimal, setCurrentAnimal] = useState();
+    const [result, setResult] = useState("");
+
+    useEffect(()=>{
+        generateRandomAnimal();
+    } , []);
+
+    const generateRandomAnimal = () => {
+        const randomIndex = Math.floor(Math.random()* animals.length);
+        setCurrentAnimal(animals[randomIndex]);
+        setResult("");
+    };
+
+    
     return(
         <div>
             <div>

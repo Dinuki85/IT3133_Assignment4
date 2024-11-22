@@ -1,90 +1,101 @@
-.game-container{
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-    margin:20px;
-}
 
-.title{
-    font-size:2rem;
-    color:#333;
-    margin-bottom:20px;
-}
-
-.game-table{
-    width:100%;
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-
-.game-table th,
-.game-table td{
-    border:1px solid #add;
-    padding:15px;
-    text-align:center;
-}
-
-.game-table th{
-    background-color:#f4f4f4;
-    color:#555;
-    font-size:1.2rem;
-}
-
-.result-cell p{
-    font-size:1.5rem;
-    font-weight:bold;
-}
-
-.result-cell .win{
-    color:green;
-}
-
-.result-cell .lose{
-    color:red;
-}
-
-.animal-name-cell{
-    font-size:1.5rem;
-    color:#ff8c00;
-    font-weight:center;
-}
-
-.animal-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.animal-card{
-    cursor: pointer;
-    border:2px solid transparent;
-    transition: transform 0.3 ease,border 0.3 ease;
-}
-
-.animal-card img{
-    width:80px;
-    height:80px;
-    object-fit:cover;
-}
-
-.animal-card:hover{
-    transform:scale(1.1);
-    border:2px solid #ffa500;
-}
-
-
-.reset-button{
-    margin-top: 20px;
-    padding :10px 20px;
-    background-color:#ffa500;
-    color:white;
-    border:non;
+.animal-game {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  
+  .game-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .left-panel,
+  .center-panel {
+    width: 15%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor:pointer;
-    font-size:1rem;
-    transition:background-color 0.3s ease;
+    border-style:double;
+    border-color:orange;
+  }
+  
+  .right-panel {
+    width: 65%; 
+    border-style:double;
+    border-color:orange;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Result Styles */
+  .win {
+    color: green;
+  }
+  
+  .lose {
+    color: red;
+  }
+  
+  /* Animal Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .animal-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .animal-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .animal-card img {
+    width: 80px;
+    height: 80px;
+  }
+  
 
-}
+  .reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .reset-button:hover {
+    background-color: #45a049;
+  }
+  
+  .div{
+    border-style:double;
+    border-color: orange;
 
-.reset-button:hover{
-    background-color:#e59400;
-}
+  }

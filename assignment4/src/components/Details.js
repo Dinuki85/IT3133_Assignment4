@@ -1,67 +1,57 @@
 import React, { useState, useEffect } from "react";
 import '../assets/css/animal.css';
+import { animals } from "../data/AnimalsDb";
 
-export default function Details({animals}){
-    const [currentAnimal, setCurrentAnimal] = useState();
-    const [result, setResult] = useState("");
-
-    useEffect(()=>{
-        generateRandomAnimal();
-    } , []);
-
-    const generateRandomAnimal = () => {
-        const randomIndex = Math.floor(Math.random()* animals.length);
-        setCurrentAnimal(animals[randomIndex]);
-        setResult("");
+export default function Details() {
+    const [currentAnimal, setCurrentAnimal] = useState(animals[Math.floor(Math.random() * animals.length)]);
+    const [result, setResult] = useState('');
+  
+    const handleAnimalClick = (animalName) => {
+      if (animalName === currentAnimal.name) {
+        setResult('Win');
+      } else {
+        setResult('Lose');
+      }
     };
-
-    const handleAnimalClick = (animal) => {
-        if(animal.name === currentAnimal.name){
-            setResult("win");
-        }else{
-            setResult("lose");
-        }
+  
+    const resetGame = () => {
+      setCurrentAnimal(animals[Math.floor(Math.random() * animals.length)]);
+      setResult('');
     };
-    return(
-        <div className="game-container">
-            <div>
-            <h1 className='title'>Animal Matching Game</h1>
-            </div>
-            <table className="game-table">
-                <thead>
-                    <tr>
-                        <th colspan='2'>Result</th>
-                        <th>Animal Name</th>
-                        <th colspan='4'>Select the Animal</th>
-                    </tr>
-                    
-                    </thead>    
-                    <tbody>
-                        <tr>
-                            <td colspan ="2" className="result-cell">
-                                <p className={result.toLocaleLowerCase()}>{result || "Pending"}</p>
-
-                            </td>
-                            <td className="animal-name-cell">
-                                <p>{currentAnimal?.name || "unknown"}</p>
-
-                            </td>
-                            <td colspan="4" className="animal-grid-cell">
-                                <div className="animal-grid">
-                                    {animals.map((animal, index) => (
-                                        <div key={index} className="animal-card" onClick={()=> handleAnimalClick(animal)}>
-                                            <img src={animal.image} alt={animal.name}/>
-                                            </div> 
-                                    ))}
-                                </div>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-                <button className="reset-button" onClick={generateRandomAnimal}>Play Again</button>
-            
-        </div>
+  
+    return (
+      <div className="animal-game">
+        <div className="div"><h1>Animal Matching Game</h1></div>
         
+        <div className="game-container">
+          <div className="left-panel">
+            <h2>Result</h2>
+            <p className={result.toLowerCase()}>{result}</p>
+          </div>
+          
+          
+          <div className="center-panel">
+            <h2>Animal Name</h2>
+            <p>{currentAnimal.name}</p>
+          </div>
+  
+         
+          <div className="right-panel">
+            <h2>Select the Animal</h2>
+            <div className="grid">
+              {animals.map((animal) => (
+                <div
+                  key={animal.name}
+                  className="animal-card"
+                  onClick={() => handleAnimalClick(animal.name)}
+                >
+                  <img src={'../assets/img'} alt={animal.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <button className="reset-button" onClick={resetGame}>Reset Game</button>
+      </div>
     );
-}
+  }

@@ -16,7 +16,10 @@ export default function Details(props){
                         {animals.map((animal, index)=>(
                             <tr key={index}>
                                 <td>{animal.name}</td>
-                                
+                                <td><botton onClick={() => handleAnimalClick(animal)}>
+                                    Select
+                                     </botton>
+                                     </td>
                             </tr>
                         ))}
                     </tbody>

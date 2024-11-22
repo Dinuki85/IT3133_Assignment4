@@ -12,6 +12,14 @@ export default function Details(props){
                             
                         </tr>
                     </thead>
+                    <tbody>
+                        {animals.map((animal, index)=>(
+                            <tr key={index}>
+                                <td>{animal.name}</td>
+                                
+                            </tr>
+                        ))}
+                    </tbody>
 
                 </table>
             </div>

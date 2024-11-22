@@ -49,7 +49,7 @@ export default function Details({animals}){
             </div>
           </div>
             </div>
-            <button
+            <button className="reset-button" onClick={generateRandomAnimal}>Play again</button>
             
         </div>
         

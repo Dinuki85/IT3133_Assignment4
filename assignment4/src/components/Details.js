@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../assets/css/animal.css';
 import { animals } from "../data/AnimalsDb";
 
+
 export default function Details() {
     const [currentAnimal, setCurrentAnimal] = useState(animals[Math.floor(Math.random() * animals.length)]);
     const [result, setResult] = useState('');

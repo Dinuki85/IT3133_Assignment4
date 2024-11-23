@@ -46,7 +46,7 @@ export default function Details() {
                   className="animal-card"
                   onClick={() => handleAnimalClick(animal.name)}
                 >
-                  <img src={animal.img} alt={animal.name} />
+                  <img src={require(`../assets/img/${animal.img}`)} alt={animal.name} />
                 </div>
               ))}
             </div>

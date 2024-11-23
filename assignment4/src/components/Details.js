@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import '../assets/css/animal.css';
 import { animals } from "../data/AnimalsDb";
 
@@ -45,7 +45,7 @@ export default function Details() {
                   className="animal-card"
                   onClick={() => handleAnimalClick(animal.name)}
                 >
-                  <img src={'../assets/img'} alt={animal.name} />
+                  <img src={animal.img} alt={animal.name} />
                 </div>
               ))}
             </div>
